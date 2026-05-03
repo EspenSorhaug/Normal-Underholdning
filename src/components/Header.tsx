@@ -16,14 +16,24 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-[#1A0A05]/95 backdrop-blur border-b border-[#C8102E]/30">
+    <header className="sticky top-0 z-50 bg-[#1A0A05]/95 backdrop-blur border-b border-[#C8102E]/40">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <NavLink to="/" className="text-[#F0A500] font-bold text-lg tracking-wide uppercase">
-          Normal Underholdning
+        <NavLink
+          to="/"
+          className="flex items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
+          <img
+            src="/logo.jpg"
+            alt="Normal Underholdning logo"
+            className="w-10 h-10 rounded object-cover"
+          />
+          <span className="text-[#F0A500] font-bold text-base sm:text-lg tracking-wide uppercase">
+            Normal Underholdning
+          </span>
         </NavLink>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex gap-1">
+        <nav className="hidden lg:flex gap-1">
           {nav.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -42,21 +52,20 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#F5F5F5] p-2"
+          className="lg:hidden text-[#F5F5F5] p-2"
           onClick={() => setOpen(!open)}
           aria-label="Meny"
+          aria-expanded={open}
         >
-          <span className="block w-6 h-0.5 bg-current mb-1.5" />
-          <span className="block w-6 h-0.5 bg-current mb-1.5" />
-          <span className="block w-6 h-0.5 bg-current" />
+          <span className={`block w-6 h-0.5 bg-current mb-1.5 transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-current mb-1.5 transition-opacity ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-current transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden border-t border-[#C8102E]/30 bg-[#2D1509]">
+        <nav className="lg:hidden border-t border-[#C8102E]/30 bg-[#2D1509]">
           {nav.map(({ to, label }) => (
             <NavLink
               key={to}

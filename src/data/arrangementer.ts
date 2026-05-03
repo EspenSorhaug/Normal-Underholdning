@@ -13,13 +13,13 @@ export interface Arrangement {
 
 export const arrangementer: Arrangement[] = [
   {
-    id: 'improshow-2025-mai',
+    id: 'improshow-2026',
     tittel: 'Improshow med Normal Underholdning',
     type: 'impro',
-    dato: '2025-05-17T19:00:00',
+    dato: '2026-05-31T19:00:00',
     sted: 'Oslo',
-    beskrivelse: 'Bli med på et improvisasjonsteatershow der ingen vet hva som skjer — ikke engang oss!',
-    billetlenke: 'https://www.ticketmaster.no',
+    beskrivelse:
+      'Bli med på et improvisasjonsteatershow der ingen vet hva som skjer — ikke engang oss!',
     facebookEvent: 'https://fb.me/e/1XA6d794Tc',
   },
 ]

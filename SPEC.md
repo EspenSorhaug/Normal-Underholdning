@@ -34,6 +34,7 @@ Fast header øverst på alle sider med lenker til:
 ### 2. Hvem er vi (`/hvem-er-vi`)
 - Hvem er Normal Underholdning
 - Historikk og bakgrunn
+- Logo vises
 - Hvem er med (bilder og korte beskrivelser — legges til etterhvert)
 
 ### 3. Impro (`/impro`)
@@ -106,12 +107,13 @@ Logoen viser et scenemiljø med røde gardiner, varm mørkebrun bakgrunn og hvit
 Alle fargekombinasjoner skal tilfredsstille WCAG AA (minimum 4.5:1 kontrastforhold for brødtekst).
 
 ### Tone og stil
+- Design er basert på farge og stemning i logo i Normal Underholdning.png
 - Varm, leken og inviterende — passer underholdningsbransjen
 - Scenetema uten å bli klisjeaktig
 - Logo vises fremtredende i header og på forsiden
 
 ### Logo
-- Plasseres i header (venstre side) og som hero på forsiden
+- Plasseres i header (venstre side) og som hero på forsiden, og som faneikon
 - Format: PNG med transparent bakgrunn (leveres av kunde)
 
 ## Teknisk stack
@@ -133,7 +135,7 @@ Alle fargekombinasjoner skal tilfredsstille WCAG AA (minimum 4.5:1 kontrastforho
 - [ ] Neste arrangement er synlig på forsiden
 - [ ] Header med navigasjon er tilgjengelig på alle sider
 - [ ] Egne sider for Impro, Revy, Musikal og Leieutstyr
-- [ ] YouTube-videoer vises på forsiden og `/video`
+- [ ] YouTube-videoer vises i iFrame på forsiden og `/video` og kan spilles av på nettsiden
 - [ ] Kontaktskjema fungerer
 - [ ] Alle fargekontraster møter WCAG AA
 - [ ] Responsivt ned til 375px bredde

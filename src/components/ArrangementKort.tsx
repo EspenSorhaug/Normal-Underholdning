@@ -4,41 +4,52 @@ interface Props {
   arrangement: Arrangement
 }
 
-function formatDato(isoString: string): string {
-  const dato = new Date(isoString)
-  return dato.toLocaleDateString('nb-NO', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-}
-
-const typeEtikett: Record<string, string> = {
+const typeEtikett: Record<Arrangement['type'], string> = {
   impro: 'Impro',
   revy: 'Revy',
   musikal: 'Musikal',
   annet: 'Arrangement',
 }
 
+function formatDato(isoString: string): string {
+  const dato = new Date(isoString)
+  return dato.toLocaleDateString('nb-NO', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
+
 export default function ArrangementKort({ arrangement }: Props) {
   return (
-    <div className="bg-[#2D1509] border border-[#C8102E]/30 rounded-lg p-6 flex flex-col gap-4">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
-            {typeEtikett[arrangement.type]}
-          </span>
-          <h3 className="text-xl font-bold text-[#F5F5F5] mt-1">{arrangement.tittel}</h3>
+    <article className="bg-[#2D1509] border border-[#C8102E]/30 rounded-lg p-6 flex flex-col gap-4">
+      <div>
+        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#F0A500] bg-[#F0A500]/10 px-2 py-1 rounded">
+          {typeEtikett[arrangement.type]}
+        </span>
+        <h3 className="text-xl font-bold text-[#F5F5F5] mt-3">
+          {arrangement.tittel}
+        </h3>
+      </div>
+
+      <dl className="text-[#A89A90] text-sm space-y-1">
+        <div className="flex gap-2">
+          <dt className="sr-only">Når</dt>
+          <dd>📅 {formatDato(arrangement.dato)}</dd>
         </div>
-      </div>
-      <div className="text-[#A89A90] text-sm space-y-1">
-        <p>📅 {formatDato(arrangement.dato)}</p>
-        <p>📍 {arrangement.sted}</p>
-      </div>
-      <p className="text-[#F5F5F5]/80 text-sm">{arrangement.beskrivelse}</p>
+        <div className="flex gap-2">
+          <dt className="sr-only">Sted</dt>
+          <dd>📍 {arrangement.sted}</dd>
+        </div>
+      </dl>
+
+      <p className="text-[#F5F5F5]/85 text-sm leading-relaxed">
+        {arrangement.beskrivelse}
+      </p>
+
       <div className="flex flex-wrap gap-3 mt-auto pt-2">
         {arrangement.billetlenke && (
           <a
@@ -61,6 +72,6 @@ export default function ArrangementKort({ arrangement }: Props) {
           </a>
         )}
       </div>
-    </div>
+    </article>
   )
 }

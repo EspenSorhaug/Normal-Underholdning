@@ -16,11 +16,13 @@ function parseRSS(xml: string): Video[] {
   const doc = parser.parseFromString(xml, 'application/xml')
   const entries = Array.from(doc.querySelectorAll('entry'))
   return entries.map((entry) => {
-    const videoId = entry.querySelector('videoId')?.textContent ?? ''
+    const id =
+      entry.getElementsByTagNameNS('http://www.youtube.com/xml/schemas/2015', 'videoId')[0]
+        ?.textContent ?? ''
     return {
-      id: videoId,
+      id,
       tittel: entry.querySelector('title')?.textContent ?? '',
-      thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+      thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
       publisert: entry.querySelector('published')?.textContent ?? '',
     }
   })
@@ -34,23 +36,32 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
   const [videoer, setVideoer] = useState<Video[]>([])
   const [laster, setLaster] = useState(true)
   const [feil, setFeil] = useState(false)
+  const [aktivVideo, setAktivVideo] = useState<string | null>(null)
 
   useEffect(() => {
+    let avbrutt = false
     fetch(CORS_PROXY)
       .then((r) => r.json())
       .then((data) => {
-        const videoer = parseRSS(data.contents)
-        setVideoer(videoer.slice(0, maks))
+        if (avbrutt) return
+        const liste = parseRSS(data.contents).filter((v) => v.id)
+        setVideoer(liste.slice(0, maks))
       })
-      .catch(() => setFeil(true))
-      .finally(() => setLaster(false))
+      .catch(() => !avbrutt && setFeil(true))
+      .finally(() => !avbrutt && setLaster(false))
+    return () => {
+      avbrutt = true
+    }
   }, [maks])
 
   if (laster) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {Array.from({ length: maks }).map((_, i) => (
-          <div key={i} className="bg-[#2D1509] rounded-lg aspect-video animate-pulse" />
+          <div
+            key={i}
+            className="bg-[#2D1509] rounded-lg aspect-video animate-pulse"
+          />
         ))}
       </div>
     )
@@ -58,15 +69,17 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
 
   if (feil || videoer.length === 0) {
     return (
-      <p className="text-[#A89A90] text-sm">Kunne ikke laste videoer. Besøk vår{' '}
+      <p className="text-[#A89A90]">
+        Kunne ikke laste videoer akkurat nå. Besøk vår{' '}
         <a
           href={`https://www.youtube.com/channel/${CHANNEL_ID}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#F0A500] underline"
+          className="text-[#F0A500] underline hover:text-[#F7C948]"
         >
           YouTube-kanal
-        </a>.
+        </a>{' '}
+        i mellomtiden.
       </p>
     )
   }
@@ -74,29 +87,51 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {videoer.map((v) => (
-        <a
+        <div
           key={v.id}
-          href={`https://www.youtube.com/watch?v=${v.id}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group bg-[#2D1509] rounded-lg overflow-hidden border border-[#C8102E]/20 hover:border-[#C8102E]/60 transition-colors"
+          className="bg-[#2D1509] rounded-lg overflow-hidden border border-[#C8102E]/20"
         >
-          <div className="relative aspect-video overflow-hidden">
-            <img
-              src={v.thumbnail}
-              alt={v.tittel}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-[#C8102E]/90 rounded-full w-12 h-12 flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </div>
+          <div className="relative aspect-video bg-black">
+            {aktivVideo === v.id ? (
+              <iframe
+                src={`https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0`}
+                title={v.tittel}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setAktivVideo(v.id)}
+                className="group absolute inset-0 w-full h-full"
+                aria-label={`Spill av video: ${v.tittel}`}
+              >
+                <img
+                  src={v.thumbnail}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="bg-[#C8102E] group-hover:bg-[#9B0C23] rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-colors">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      className="w-8 h-8 ml-1"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            )}
           </div>
-          <p className="p-3 text-sm text-[#F5F5F5] line-clamp-2">{v.tittel}</p>
-        </a>
+          <p className="p-4 text-sm text-[#F5F5F5] line-clamp-2 min-h-[3.5rem]">
+            {v.tittel}
+          </p>
+        </div>
       ))}
     </div>
   )
