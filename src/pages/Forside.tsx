@@ -52,7 +52,7 @@ export default function Forside() {
             Impro · Revy · Musikal · AV-utleie
           </p>
           <p className="mt-6 text-[#F5F5F5]/80 text-base sm:text-lg max-w-xl mx-auto">
-            Vi lager underholdning som overrasker, berører og får deg til å le.
+            Vi lager normal underholdning for vanlige folk!
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
