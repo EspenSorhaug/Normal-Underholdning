@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const nav = [
-  { to: '/', label: 'Forside' },
   { to: '/hvem-er-vi', label: 'Hvem er vi' },
   { to: '/impro', label: 'Impro' },
   { to: '/revy', label: 'Revy' },
