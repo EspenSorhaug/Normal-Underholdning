@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#C8102E]/40 bg-[#2D1509] mt-16">
+    <footer className="border-t border-[#C8102E]/40 bg-[#5E0A1D] mt-16">
       <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-8 justify-between">
         <div className="flex items-center gap-3">
           <img
@@ -44,7 +44,7 @@ export default function Footer() {
           </Link>
         </nav>
       </div>
-      <div className="border-t border-[#1A0A05] px-4 py-4 text-center text-xs text-[#A89A90]">
+      <div className="border-t border-[#3A0612] px-4 py-4 text-center text-xs text-[#A89A90]">
         © {new Date().getFullYear()} Normal Underholdning
       </div>
     </footer>

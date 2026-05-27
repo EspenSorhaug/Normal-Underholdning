@@ -29,7 +29,7 @@ export default function Leieutstyr() {
         </p>
       </section>
 
-      <div className="mt-12 bg-[#2D1509] border border-[#C8102E]/30 rounded-lg p-6 sm:p-8">
+      <div className="mt-12 bg-[#5E0A1D] border border-[#C8102E]/30 rounded-lg p-6 sm:p-8">
         <h2 className="text-xl font-bold text-[#F5F5F5] mb-2">Interessert?</h2>
         <p className="text-[#A89A90] mb-6">
           Ta kontakt så finner vi noe som passer for ditt arrangement.

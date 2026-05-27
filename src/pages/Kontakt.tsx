@@ -38,7 +38,7 @@ export default function Kontakt() {
       </p>
 
       {status === 'sendt' ? (
-        <div className="bg-[#2D1509] border border-[#F0A500]/40 rounded-lg p-8 text-center">
+        <div className="bg-[#5E0A1D] border border-[#F0A500]/40 rounded-lg p-8 text-center">
           <p className="text-[#F0A500] text-xl font-semibold">
             Meldingen er sendt!
           </p>
@@ -58,7 +58,7 @@ export default function Kontakt() {
               name="navn"
               type="text"
               required
-              className="w-full bg-[#2D1509] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
+              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function Kontakt() {
               name="epost"
               type="email"
               required
-              className="w-full bg-[#2D1509] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
+              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
             />
           </div>
 
@@ -90,7 +90,7 @@ export default function Kontakt() {
               name="melding"
               rows={5}
               required
-              className="w-full bg-[#2D1509] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors resize-none"
+              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors resize-none"
             />
           </div>
 

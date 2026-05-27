@@ -3,9 +3,9 @@
 @theme {
   --color-scene-red: #C8102E;
   --color-scene-red-dark: #9B0C23;
-  --color-bg-dark: #1A0A05;
-  --color-bg-mid: #2D1509;
-  --color-bg-card: #3D1F0E;
+  --color-bg-dark: #3A0612;
+  --color-bg-mid: #5E0A1D;
+  --color-bg-card: #7B0E26;
   --color-gold: #F0A500;
   --color-gold-light: #F7C948;
   --color-text-primary: #F5F5F5;
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: #1A0A05;
+  background-color: #3A0612;
   color: #F5F5F5;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   margin: 0;

@@ -60,7 +60,7 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
         {Array.from({ length: maks }).map((_, i) => (
           <div
             key={i}
-            className="bg-[#2D1509] rounded-lg aspect-video animate-pulse"
+            className="bg-[#5E0A1D] rounded-lg aspect-video animate-pulse"
           />
         ))}
       </div>
@@ -89,7 +89,7 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
       {videoer.map((v) => (
         <div
           key={v.id}
-          className="bg-[#2D1509] rounded-lg overflow-hidden border border-[#C8102E]/20"
+          className="bg-[#5E0A1D] rounded-lg overflow-hidden border border-[#C8102E]/20"
         >
           <div className="relative aspect-video bg-black">
             {aktivVideo === v.id ? (

@@ -16,7 +16,7 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-[#1A0A05]/95 backdrop-blur border-b border-[#C8102E]/40">
+    <header className="sticky top-0 z-50 bg-[#3A0612]/95 backdrop-blur border-b border-[#C8102E]/40">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         <NavLink
           to="/"
@@ -65,7 +65,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="lg:hidden border-t border-[#C8102E]/30 bg-[#2D1509]">
+        <nav className="lg:hidden border-t border-[#C8102E]/30 bg-[#5E0A1D]">
           {nav.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -73,7 +73,7 @@ export default function Header() {
               end={to === '/'}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-6 py-3 text-sm border-b border-[#1A0A05] transition-colors ${
+                `block px-6 py-3 text-sm border-b border-[#3A0612] transition-colors ${
                   isActive
                     ? 'text-[#F0A500] font-semibold'
                     : 'text-[#A89A90] hover:text-[#F5F5F5]'

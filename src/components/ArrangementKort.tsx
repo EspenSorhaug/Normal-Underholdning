@@ -25,7 +25,7 @@ function formatDato(isoString: string): string {
 
 export default function ArrangementKort({ arrangement }: Props) {
   return (
-    <article className="bg-[#2D1509] border border-[#C8102E]/30 rounded-lg p-6 flex flex-col gap-4">
+    <article className="bg-[#5E0A1D] border border-[#C8102E]/30 rounded-lg p-6 flex flex-col gap-4">
       <div>
         <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#F0A500] bg-[#F0A500]/10 px-2 py-1 rounded">
           {typeEtikett[arrangement.type]}

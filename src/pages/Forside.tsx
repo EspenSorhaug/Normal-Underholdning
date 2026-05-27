@@ -38,7 +38,7 @@ export default function Forside() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-b from-[#2D1509] to-[#1A0A05] border-b border-[#C8102E]/30 py-20 px-4 text-center overflow-hidden">
+      <section className="relative bg-gradient-to-b from-[#5E0A1D] to-[#3A0612] border-b border-[#C8102E]/30 py-20 px-4 text-center overflow-hidden">
         <div className="max-w-3xl mx-auto relative">
           <img
             src="/logo.jpg"
@@ -94,7 +94,7 @@ export default function Forside() {
       )}
 
       {/* Hva vi gjør */}
-      <section className="bg-[#2D1509]/40 border-y border-[#C8102E]/20 py-16 px-4">
+      <section className="bg-[#5E0A1D]/40 border-y border-[#C8102E]/20 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-[#F5F5F5] mb-2">Hva vi gjør</h2>
           <p className="text-[#A89A90] mb-10">
@@ -105,7 +105,7 @@ export default function Forside() {
               <Link
                 key={til}
                 to={til}
-                className="bg-[#2D1509] border border-[#C8102E]/30 hover:border-[#C8102E]/70 rounded-lg p-6 transition-colors group"
+                className="bg-[#5E0A1D] border border-[#C8102E]/30 hover:border-[#C8102E]/70 rounded-lg p-6 transition-colors group"
               >
                 <span className="text-4xl block">{ikon}</span>
                 <h3 className="text-lg font-bold text-[#F0A500] mt-3 mb-2 group-hover:text-[#F7C948] transition-colors">
