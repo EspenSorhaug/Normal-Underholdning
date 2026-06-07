@@ -8,25 +8,6 @@ interface Video {
 }
 
 const CHANNEL_ID = 'UCUpIPEvM1YtKGZlUHMB15gQ'
-const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
-const CORS_PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL)}`
-
-function parseRSS(xml: string): Video[] {
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(xml, 'application/xml')
-  const entries = Array.from(doc.querySelectorAll('entry'))
-  return entries.map((entry) => {
-    const id =
-      entry.getElementsByTagNameNS('http://www.youtube.com/xml/schemas/2015', 'videoId')[0]
-        ?.textContent ?? ''
-    return {
-      id,
-      tittel: entry.querySelector('title')?.textContent ?? '',
-      thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
-      publisert: entry.querySelector('published')?.textContent ?? '',
-    }
-  })
-}
 
 interface Props {
   maks?: number
@@ -40,11 +21,12 @@ export default function YouTubeGrid({ maks = 3 }: Props) {
 
   useEffect(() => {
     let avbrutt = false
-    fetch(CORS_PROXY)
+    // Kaller nå VÅRT eget backend-API i stedet for en ekstern proxy.
+    // Svaret er ferdig JSON — ingen XML-parsing i nettleseren lenger.
+    fetch('/api/videos')
       .then((r) => r.json())
-      .then((data) => {
+      .then((liste: Video[]) => {
         if (avbrutt) return
-        const liste = parseRSS(data.contents).filter((v) => v.id)
         setVideoer(liste.slice(0, maks))
       })
       .catch(() => !avbrutt && setFeil(true))
