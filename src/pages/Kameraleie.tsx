@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 
-export default function Leieutstyr() {
+export default function Kameraleie() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
       <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
         AV-utstyr
       </span>
-      <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">Leieutstyr</h1>
+      <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">Kameraleie</h1>
       <p className="text-[#A89A90] text-lg mb-12">
         Profesjonelt lyd- og lysutstyr til ditt arrangement.
       </p>

@@ -6,7 +6,7 @@ import HvemErVi from './pages/HvemErVi'
 import Impro from './pages/Impro'
 import Revy from './pages/Revy'
 import Musikal from './pages/Musikal'
-import Leieutstyr from './pages/Leieutstyr'
+import Kameraleie from './pages/Kameraleie'
 import Video from './pages/Video'
 import Kontakt from './pages/Kontakt'
 
@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/impro" element={<Impro />} />
           <Route path="/revy" element={<Revy />} />
           <Route path="/musikal" element={<Musikal />} />
-          <Route path="/leieutstyr" element={<Leieutstyr />} />
+          <Route path="/kameraleie" element={<Kameraleie />} />
           <Route path="/video" element={<Video />} />
           <Route path="/kontakt" element={<Kontakt />} />
         </Routes>

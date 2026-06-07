@@ -33,8 +33,8 @@ export default function Footer() {
           <Link to="/musikal" className="hover:text-[#F5F5F5] transition-colors">
             Musikal
           </Link>
-          <Link to="/leieutstyr" className="hover:text-[#F5F5F5] transition-colors">
-            Leieutstyr
+          <Link to="/kameraleie" className="hover:text-[#F5F5F5] transition-colors">
+            Kameraleie
           </Link>
           <Link to="/video" className="hover:text-[#F5F5F5] transition-colors">
             Video

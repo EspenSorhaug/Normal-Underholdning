@@ -23,8 +23,8 @@ const tilbud = [
     tekst: 'Musikal med hjerte, humor og store følelser.',
   },
   {
-    til: '/leieutstyr',
-    tittel: 'Leieutstyr',
+    til: '/kameraleie',
+    tittel: 'Kameraleie',
     ikon: '🎬',
     tekst: 'Lyd og lys for ditt arrangement — vi har utstyret du trenger.',
   },

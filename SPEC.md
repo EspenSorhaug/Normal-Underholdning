@@ -19,7 +19,7 @@ Fast header øverst på alle sider med lenker til:
 | Impro | `/impro` |
 | Revy | `/revy` |
 | Musikal | `/musikal` |
-| Leieutstyr | `/leieutstyr` |
+| Kameraleie | `/kameraleie` |
 | Video | `/video` |
 | Kontakt | `/kontakt` |
 
@@ -28,7 +28,7 @@ Fast header øverst på alle sider med lenker til:
 ### 1. Forside (`/`)
 - **Hero** — Logo, navn og kort slagord
 - **Kommende arrangementer** — Fremtredende seksjon øverst, viser neste arrangement(er) med dato, sted og lenke til billettkjøp
-- **Hva vi gjør** — Kort presentasjon av Impro, Revy, Musikal og Leieutstyr med lenker til undersidene
+- **Hva vi gjør** — Kort presentasjon av Impro, Revy, Musikal og Kameraleie med lenker til undersidene
 - **Siste videoer fra YouTube** — 3 siste videoer fra kanalen
 
 ### 2. Hvem er vi (`/hvem-er-vi`)
@@ -53,7 +53,7 @@ Fast header øverst på alle sider med lenker til:
 - Prosjekter og forestillinger
 - Bilder og video (legges til etterhvert)
 
-### 6. Leieutstyr (`/leieutstyr`)
+### 6. Kameraleie (`/kameraleie`)
 - Hva slags AV-utstyr som leies ut
 - Priser / kontakt for forespørsel
 - Bilder av utstyr (legges til etterhvert)
@@ -134,7 +134,7 @@ Alle fargekombinasjoner skal tilfredsstille WCAG AA (minimum 4.5:1 kontrastforho
 - [ ] Logo vises i header og på forsiden
 - [ ] Neste arrangement er synlig på forsiden
 - [ ] Header med navigasjon er tilgjengelig på alle sider
-- [ ] Egne sider for Impro, Revy, Musikal og Leieutstyr
+- [ ] Egne sider for Impro, Revy, Musikal og Kameraleie
 - [ ] YouTube-videoer vises i iFrame på forsiden og `/video` og kan spilles av på nettsiden
 - [ ] Kontaktskjema fungerer
 - [ ] Alle fargekontraster møter WCAG AA

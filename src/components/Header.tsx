@@ -6,7 +6,7 @@ const nav = [
   { to: '/impro', label: 'Impro' },
   { to: '/revy', label: 'Revy' },
   { to: '/musikal', label: 'Musikal' },
-  { to: '/leieutstyr', label: 'Leieutstyr' },
+  { to: '/kameraleie', label: 'Kameraleie' },
   { to: '/video', label: 'Video' },
   { to: '/kontakt', label: 'Kontakt' },
 ]
