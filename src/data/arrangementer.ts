@@ -22,4 +22,13 @@ export const arrangementer: Arrangement[] = [
       'Bli med på et improvisasjonsteatershow der ingen vet hva som skjer — ikke engang oss!',
     facebookEvent: 'https://fb.me/e/1XA6d794Tc',
   },
+  {
+    id: 'aldri-beredt-2026-11-24',
+    tittel: 'Aldri Beredt — improshow',
+    type: 'impro',
+    dato: '2026-11-24T20:15:00',
+    sted: 'Lille sal, Chateau Neuf',
+    beskrivelse:
+      'Improgruppa Aldri Beredt spiller langformat impro: hele forestillingen blir til der og da, foran deg.',
+  },
 ]

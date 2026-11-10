@@ -1,32 +1,117 @@
+import KommendeArrangementer from '../components/KommendeArrangementer'
+
+const instagram = 'https://www.instagram.com/aldriberedt/'
+
+const sisteInnlegg = {
+  fil: '/impro/Dfkd8L8ihv3.jpg',
+  innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/',
+  alt: 'Fire medlemmer av Aldri Beredt på scenen foran et mørkeblått teppe',
+}
+
+const bilder = [
+  {
+    fil: '/impro/Dfkd8L8ihv3-2.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/?img_index=2',
+    alt: 'Scene fra en forestilling: én ligger på gulvet og ler mens en annen bøyer seg over, to sitter på stoler og ser på',
+  },
+  {
+    fil: '/impro/Dfkd8L8ihv3-3.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/?img_index=3',
+    alt: 'Pianisten ved keyboardet på scenen, med en spiller lent fremover i bakgrunnen',
+  },
+  {
+    fil: '/impro/DZp0oxhKVvT.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/DZp0oxhKVvT/',
+    alt: 'Aldri Beredt samlet på en parkbenk foran en syrinbusk, alle med fingrene formet som briller',
+  },
+  {
+    fil: '/impro/DZk9dscKK7Z.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/DZk9dscKK7Z/',
+    alt: 'Aldri Beredt i en tett, tullete gruppepose foran et rødt sceneteppe',
+  },
+  {
+    fil: '/impro/DfKfe1LNX8d.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/DfKfe1LNX8d/',
+    alt: 'Aldri Beredt i svarte t-skjorter og fargerike skjerf poserer lekent i en park',
+  },
+]
+
 export default function Impro() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
-        Impro
-      </span>
-      <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">
-        Improvisasjonsteater
-      </h1>
-      <p className="text-[#A89A90] text-lg mb-12">
-        Ingen manus. Ingen plan. Bare øyeblikket.
-      </p>
+      <section className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-10 items-center">
+        <div>
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
+            Improgruppa vår
+          </span>
+          <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">
+            Aldri Beredt
+          </h1>
+          <p className="text-[#F5F5F5]/85 text-lg leading-relaxed mb-6">
+            Aldri Beredt er improgruppa som setter opp langformat impro i Oslo. Én
+            kveld, ingen manus — bare et forrykende show som blir til der og da, sammen med
+            publikum.
+          </p>
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border border-[#F0A500] text-[#F0A500] hover:bg-[#F0A500]/10 text-sm font-semibold px-4 py-2 rounded transition-colors"
+          >
+            Følg @aldriberedt på Instagram
+          </a>
+        </div>
 
-      <section className="space-y-6 text-[#F5F5F5]/85 text-lg leading-relaxed">
-        <p>
-          Improvisasjonsteater handler om å skape noe ut av ingenting — i sanntid,
-          foran publikum, uten nett. Det er krevende, morsomt og alltid unikt.
-        </p>
-        <p>
-          Vi har holdt på med impro lenge, og har spilt alt fra intime kveldsshow
-          til større arrangementer. Hver kveld er forskjellig, og det er nettopp
-          det som gjør impro så spesielt.
-        </p>
+        <a
+          href={sisteInnlegg.innlegg}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block aspect-[4/3] md:aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#C8102E]/30 hover:border-[#C8102E]/70 shadow-2xl shadow-[#C8102E]/20 transition-colors"
+        >
+          <img
+            src={sisteInnlegg.fil}
+            alt={sisteInnlegg.alt}
+            className="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-300"
+          />
+        </a>
       </section>
 
-      <section className="mt-16 border-t border-[#C8102E]/20 pt-12">
-        <h2 className="text-2xl font-bold text-[#F5F5F5] mb-4">Prosjekter</h2>
-        <p className="text-[#A89A90] italic">
-          ✏️ Prosjekter, forestillinger, bilder og videoklipp legges til her.
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Neste show</h2>
+        <KommendeArrangementer type="impro" />
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Bilder</h2>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+          {bilder.map(({ fil, innlegg, alt }, i) => (
+            <li key={fil} className={i === 0 ? 'col-span-2' : undefined}>
+              <a
+                href={innlegg}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative block ${i === 0 ? 'aspect-[8/5] sm:aspect-auto sm:h-full' : 'aspect-[4/5]'} overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors`}
+              >
+                <img
+                  src={fil}
+                  alt={alt}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="text-[#A89A90] text-sm mt-4">
+          Flere bilder og klipp på{' '}
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F0A500] hover:text-[#F7C948] font-semibold"
+          >
+            @aldriberedt
+          </a>
         </p>
       </section>
     </div>
