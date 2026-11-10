@@ -110,9 +110,8 @@ export default function Impro() {
             rel="noopener noreferrer"
             className="text-[#F0A500] hover:text-[#F7C948] font-semibold"
           >
-            Instagram
+            @aldriberedt
           </a>
-          .
         </p>
       </section>
     </div>
