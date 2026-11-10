@@ -28,35 +28,13 @@ const bilder = [
 export default function Impro() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
-        Impro
-      </span>
-      <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">
-        Improvisasjonsteater
-      </h1>
-      <p className="text-[#A89A90] text-lg mb-12">
-        Ingen manus. Ingen plan. Bare øyeblikket.
-      </p>
-
-      <section className="space-y-6 text-[#F5F5F5]/85 text-lg leading-relaxed">
-        <p>
-          Improvisasjonsteater handler om å skape noe ut av ingenting — i sanntid,
-          foran publikum, uten nett. Det er krevende, morsomt og alltid unikt.
-        </p>
-        <p>
-          Vi har holdt på med impro lenge, og har spilt alt fra intime kveldsshow
-          til større arrangementer. Hver kveld er forskjellig, og det er nettopp
-          det som gjør impro så spesielt.
-        </p>
-      </section>
-
-      <section className="mt-16 border-t border-[#C8102E]/20 pt-12">
+      <section>
         <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
           Improgruppa vår
         </span>
-        <h2 className="text-3xl font-bold text-[#F5F5F5] mt-2 mb-4">
+        <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">
           Aldri beredt
-        </h2>
+        </h1>
         <p className="text-[#F5F5F5]/85 text-lg leading-relaxed mb-6">
           Aldri beredt er improgruppa som setter opp langformat impro i Oslo. Én
           kveld, ingen manus — bare historier som blir til der og da, sammen med
@@ -73,12 +51,12 @@ export default function Impro() {
       </section>
 
       <section className="mt-12">
-        <h3 className="text-2xl font-bold text-[#F5F5F5] mb-6">Neste show</h3>
+        <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Neste show</h2>
         <KommendeArrangementer type="impro" />
       </section>
 
       <section className="mt-12">
-        <h3 className="text-2xl font-bold text-[#F5F5F5] mb-6">Bilder</h3>
+        <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Bilder</h2>
         <ul className="grid grid-cols-2 gap-3 sm:gap-4">
           {bilder.map(({ fil, innlegg, alt }) => (
             <li key={fil}>
