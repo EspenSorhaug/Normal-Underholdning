@@ -5,7 +5,7 @@ const instagram = 'https://www.instagram.com/aldriberedt/'
 const sisteInnlegg = {
   fil: '/impro/Dfkd8L8ihv3.jpg',
   innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/',
-  alt: 'Fire medlemmer av Aldri beredt på scenen foran et mørkeblått teppe',
+  alt: 'Fire medlemmer av Aldri Beredt på scenen foran et mørkeblått teppe',
 }
 
 const bilder = [
@@ -22,17 +22,17 @@ const bilder = [
   {
     fil: '/impro/DZp0oxhKVvT.jpg',
     innlegg: 'https://www.instagram.com/aldriberedt/p/DZp0oxhKVvT/',
-    alt: 'Aldri beredt samlet på en parkbenk foran en syrinbusk, alle med fingrene formet som briller',
+    alt: 'Aldri Beredt samlet på en parkbenk foran en syrinbusk, alle med fingrene formet som briller',
   },
   {
     fil: '/impro/DZk9dscKK7Z.jpg',
     innlegg: 'https://www.instagram.com/aldriberedt/p/DZk9dscKK7Z/',
-    alt: 'Aldri beredt i en tett, tullete gruppepose foran et rødt sceneteppe',
+    alt: 'Aldri Beredt i en tett, tullete gruppepose foran et rødt sceneteppe',
   },
   {
     fil: '/impro/DfKfe1LNX8d.jpg',
     innlegg: 'https://www.instagram.com/aldriberedt/p/DfKfe1LNX8d/',
-    alt: 'Aldri beredt i svarte t-skjorter og fargerike skjerf poserer lekent i en park',
+    alt: 'Aldri Beredt i svarte t-skjorter og fargerike skjerf poserer lekent i en park',
   },
 ]
 
@@ -45,11 +45,11 @@ export default function Impro() {
             Improgruppa vår
           </span>
           <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">
-            Aldri beredt
+            Aldri Beredt
           </h1>
           <p className="text-[#F5F5F5]/85 text-lg leading-relaxed mb-6">
-            Aldri beredt er improgruppa som setter opp langformat impro i Oslo. Én
-            kveld, ingen manus — bare historier som blir til der og da, sammen med
+            Aldri Beredt er improgruppa som setter opp langformat impro i Oslo. Én
+            kveld, ingen manus — bare et forrykende show som blir til der og da, sammen med
             publikum.
           </p>
           <a
