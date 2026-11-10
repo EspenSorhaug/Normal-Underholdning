@@ -25,14 +25,14 @@ const bilder = [
     alt: 'Aldri beredt samlet på en parkbenk foran en syrinbusk, alle med fingrene formet som briller',
   },
   {
-    fil: '/impro/DfKfe1LNX8d.jpg',
-    innlegg: 'https://www.instagram.com/aldriberedt/p/DfKfe1LNX8d/',
-    alt: 'Aldri beredt i svarte t-skjorter og fargerike skjerf poserer lekent i en park',
-  },
-  {
     fil: '/impro/DZk9dscKK7Z.jpg',
     innlegg: 'https://www.instagram.com/aldriberedt/p/DZk9dscKK7Z/',
     alt: 'Aldri beredt i en tett, tullete gruppepose foran et rødt sceneteppe',
+  },
+  {
+    fil: '/impro/DfKfe1LNX8d.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/DfKfe1LNX8d/',
+    alt: 'Aldri beredt i svarte t-skjorter og fargerike skjerf poserer lekent i en park',
   },
 ]
 
