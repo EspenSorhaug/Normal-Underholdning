@@ -10,6 +10,16 @@ const sisteInnlegg = {
 
 const bilder = [
   {
+    fil: '/impro/Dfkd8L8ihv3-2.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/?img_index=2',
+    alt: 'Scene fra en forestilling: én ligger på gulvet og ler mens en annen bøyer seg over, to sitter på stoler og ser på',
+  },
+  {
+    fil: '/impro/Dfkd8L8ihv3-3.jpg',
+    innlegg: 'https://www.instagram.com/aldriberedt/p/Dfkd8L8ihv3/?img_index=3',
+    alt: 'Pianisten ved keyboardet på scenen, med en spiller lent fremover i bakgrunnen',
+  },
+  {
     fil: '/impro/DZp0oxhKVvT.jpg',
     innlegg: 'https://www.instagram.com/aldriberedt/p/DZp0oxhKVvT/',
     alt: 'Aldri beredt samlet på en parkbenk foran en syrinbusk, alle med fingrene formet som briller',
@@ -73,20 +83,20 @@ export default function Impro() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Bilder</h2>
-        <ul className="grid grid-cols-3 gap-2 sm:gap-4">
-          {bilder.map(({ fil, innlegg, alt }) => (
-            <li key={fil}>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+          {bilder.map(({ fil, innlegg, alt }, i) => (
+            <li key={fil} className={i === 0 ? 'col-span-2' : undefined}>
               <a
                 href={innlegg}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block aspect-[4/5] overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors"
+                className={`relative block ${i === 0 ? 'aspect-[8/5] sm:aspect-auto sm:h-full' : 'aspect-[4/5]'} overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors`}
               >
                 <img
                   src={fil}
                   alt={alt}
                   loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
             </li>
