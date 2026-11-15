@@ -1,4 +1,5 @@
 import KommendeArrangementer from '../components/KommendeArrangementer'
+import Bilde from '../components/Bilde'
 
 const instagram = 'https://www.instagram.com/aldriberedt/'
 
@@ -68,9 +69,11 @@ export default function Impro() {
           rel="noopener noreferrer"
           className="block aspect-[4/3] md:aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#C8102E]/30 hover:border-[#C8102E]/70 shadow-2xl shadow-[#C8102E]/20 transition-colors"
         >
-          <img
+          <Bilde
             src={sisteInnlegg.fil}
             alt={sisteInnlegg.alt}
+            sizes="(min-width: 768px) 340px, 100vw"
+            prioritet
             className="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-300"
           />
         </a>
@@ -92,10 +95,10 @@ export default function Impro() {
                 rel="noopener noreferrer"
                 className={`relative block ${i === 0 ? 'aspect-[8/5] sm:aspect-auto sm:h-full' : 'aspect-[4/5]'} overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors`}
               >
-                <img
+                <Bilde
                   src={fil}
                   alt={alt}
-                  loading="lazy"
+                  sizes={i === 0 ? '(min-width: 640px) 580px, 100vw' : '(min-width: 640px) 290px, 50vw'}
                   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Bilde from '../components/Bilde'
 
 // Tom streng = kortet skjules.
 const FINN_URL = 'https://www.finn.no/recommerce/forsale/item/362741385'
@@ -109,9 +110,11 @@ export default function Kameraleie() {
           </p>
         </div>
 
-        <img
+        <Bilde
           src={toppbilde.fil}
           alt={toppbilde.alt}
+          sizes="(min-width: 768px) 500px, 100vw"
+          prioritet
           className="block aspect-[6/5] w-full object-cover rounded-2xl border border-[#C8102E]/30 shadow-2xl shadow-[#C8102E]/20"
         />
       </section>
@@ -179,10 +182,10 @@ export default function Kameraleie() {
               key={fil}
               className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[#C8102E]/30"
             >
-              <img
+              <Bilde
                 src={fil}
                 alt={alt}
-                loading="lazy"
+                sizes="(min-width: 640px) 290px, 50vw"
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </li>

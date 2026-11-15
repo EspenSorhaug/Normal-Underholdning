@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import Bilde from './Bilde'
 
 const nav = [
   { to: '/hvem-er-vi', label: 'Hvem er vi' },
@@ -22,9 +23,11 @@ export default function Header() {
           className="flex items-center gap-3"
           onClick={() => setOpen(false)}
         >
-          <img
+          <Bilde
             src="/logo.jpg"
             alt="Normal Underholdning logo"
+            sizes="40px"
+            prioritet
             className="w-10 h-10 rounded object-cover"
           />
           <span className="text-[#F0A500] font-bold text-base sm:text-lg tracking-wide uppercase">

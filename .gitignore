@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Genereres av scripts/optimaliser-bilder.mjs (pnpm bilder)
+public/optimert
+src/data/bilder.json
