@@ -17,8 +17,8 @@ const grunner = [
     emne: 'Jeg vil være med!',
   },
   {
-    tittel: 'Leie AV-utstyr',
-    tekst: 'Kamera, lyd og lys til ditt eget arrangement. Si hva du trenger og når.',
+    tittel: 'Leie kamerautstyr',
+    tekst: 'Trenger du kamera til et prosjekt eller arrangement? Si hva du trenger og når.',
     emne: 'Forespørsel om kameraleie',
   },
 ]

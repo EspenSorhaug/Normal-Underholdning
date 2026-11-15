@@ -26,7 +26,7 @@ const tilbud = [
     til: '/kameraleie',
     tittel: 'Kameraleie',
     ikon: '🎬',
-    tekst: 'Lyd og lys for ditt arrangement — vi har utstyret du trenger.',
+    tekst: 'Kamerautstyr til ditt prosjekt eller arrangement.',
   },
 ]
 
@@ -49,7 +49,7 @@ export default function Forside() {
             Normal Underholdning
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-[#F0A500] uppercase tracking-widest">
-            Impro · Revy · Musikal · AV-utleie
+            Impro · Revy · Musikal · Kameraleie
           </p>
           <p className="mt-6 text-[#F5F5F5]/80 text-base sm:text-lg max-w-xl mx-auto">
             Vi lager normal underholdning for vanlige folk!
