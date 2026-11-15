@@ -91,6 +91,13 @@ const hvaViGjør = [
     fil: '/musikal/DK42yQECrqI-1.jpg',
     alt: 'Ensemblet fra The Peak i kostymer tar en glad selfie bak scenen',
   },
+  {
+    til: '/kameraleie',
+    navn: 'Kameraleie',
+    tekst: 'Lei riggen vi selv filmer med.',
+    fil: '/kameraleie/rigg-front.jpg',
+    alt: 'Sony-kamera i rigg med Sigma-objektiv, XLR-mikrofon og Atomos-monitor',
+  },
 ]
 
 export default function HvemErVi() {
@@ -206,7 +213,7 @@ export default function HvemErVi() {
 
       <section className="mt-16">
         <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Hva vi gjør</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {hvaViGjør.map(({ til, navn, tekst, fil, alt }) => (
             <li key={til}>
               <Link

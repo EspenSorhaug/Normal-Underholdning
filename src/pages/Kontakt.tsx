@@ -18,8 +18,8 @@ const grunner = [
   },
   {
     tittel: 'Leie kamerautstyr',
-    tekst: 'Trenger du kamera til et prosjekt eller arrangement? Si hva du trenger og når.',
-    emne: 'Forespørsel om kameraleie',
+    tekst: 'Spørsmål om utstyret? Selve bookingen skjer via FINN eller Hygglo.',
+    emne: 'Spørsmål om kameraleie',
   },
 ]
 

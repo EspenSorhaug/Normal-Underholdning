@@ -2,11 +2,11 @@
 
 ## Oversikt
 
-Nettside for Normal Underholdning, et underholdningsselskap som tilbyr impro, revy, musikal og utleie av AV-utstyr. Siden skal presentere selskapet, vise kommende arrangementer og dele videoinnhold fra YouTube.
+Nettside for Normal Underholdning, et underholdningsselskap som tilbyr impro, revy, musikal og utleie av kamerautstyr. Siden skal presentere selskapet, vise kommende arrangementer og dele videoinnhold fra YouTube.
 
 ## Målgruppe
 
-Alle som vil vite hva Normal Underholdning driver med — publikum, potensielle leietakere av AV-utstyr, og samarbeidspartnere.
+Alle som vil vite hva Normal Underholdning driver med — publikum, potensielle leietakere av kamerautstyr, og samarbeidspartnere.
 
 ## Navigasjon (header)
 
@@ -54,7 +54,7 @@ Fast header øverst på alle sider med lenker til:
 - Bilder og video (legges til etterhvert)
 
 ### 6. Kameraleie (`/kameraleie`)
-- Hva slags AV-utstyr som leies ut
+- Hva slags kamerautstyr som leies ut
 - Priser / kontakt for forespørsel
 - Bilder av utstyr (legges til etterhvert)
 

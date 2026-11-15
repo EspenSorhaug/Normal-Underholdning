@@ -46,6 +46,10 @@ const tilbud: {
     tittel: 'Kameraleie',
     ikon: '🎬',
     tekst: 'Kamerautstyr til ditt prosjekt eller arrangement.',
+    bilde: {
+      fil: '/kameraleie/rigg-front.jpg',
+      alt: 'Sony-kamera i rigg med Sigma-objektiv, XLR-mikrofon og Atomos-monitor',
+    },
   },
 ]
 
