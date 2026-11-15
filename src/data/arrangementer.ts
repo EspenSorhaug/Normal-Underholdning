@@ -30,5 +30,7 @@ export const arrangementer: Arrangement[] = [
     sted: 'Lille sal, Chateau Neuf',
     beskrivelse:
       'Improgruppa Aldri Beredt spiller langformat impro: hele forestillingen blir til der og da, foran deg.',
+    billetlenke: 'https://improneuf.com/dt/web/node/573',
+    facebookEvent: 'https://fb.me/e/6Jb5vEXvJ',
   },
 ]
