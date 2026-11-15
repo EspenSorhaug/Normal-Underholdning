@@ -1,122 +1,107 @@
-import { useState, type FormEvent } from 'react'
+const EPOST = 'espen.sorhaug@gmail.com'
+const YOUTUBE = 'https://www.youtube.com/channel/UCUpIPEvM1YtKGZlUHMB15gQ'
+const INSTAGRAM_DM = 'https://ig.me/m/normalunderholdning'
 
-const FORMSPREE_ID = 'REPLACE_ME'
+const epostLenke = (emne?: string) =>
+  `mailto:${EPOST}${emne ? `?subject=${encodeURIComponent(emne)}` : ''}`
+
+const grunner = [
+  {
+    tittel: 'Booke et show',
+    tekst: 'Revy, impro eller musikalnumre til firmafesten, jubileet eller lanseringen.',
+    emne: 'Booking av show',
+  },
+  {
+    tittel: 'Bli med i gjengen',
+    tekst: 'Liker du å skrive, spille, synge eller bygge kulisser? Vi har alltid plass til flere.',
+    emne: 'Jeg vil være med!',
+  },
+  {
+    tittel: 'Leie AV-utstyr',
+    tekst: 'Kamera, lyd og lys til ditt eget arrangement. Si hva du trenger og når.',
+    emne: 'Forespørsel om kameraleie',
+  },
+]
+
+const sosiale = [
+  { navn: 'Instagram', handle: '@normalunderholdning', url: 'https://www.instagram.com/normalunderholdning/' },
+  { navn: 'Instagram', handle: '@aldriberedt', url: 'https://www.instagram.com/aldriberedt/' },
+  { navn: 'Facebook', handle: 'Normal Underholdning', url: 'https://www.facebook.com/normalunderholdning' },
+  { navn: 'YouTube', handle: 'Normal Underholdning', url: YOUTUBE },
+]
 
 export default function Kontakt() {
-  const [status, setStatus] = useState<'idle' | 'sender' | 'sendt' | 'feil'>(
-    'idle',
-  )
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setStatus('sender')
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      })
-      if (res.ok) {
-        setStatus('sendt')
-        form.reset()
-      } else {
-        setStatus('feil')
-      }
-    } catch {
-      setStatus('feil')
-    }
-  }
-
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-[#F5F5F5] mb-3">Kontakt</h1>
-      <p className="text-[#A89A90] text-lg mb-10">
-        Send oss en melding — vi svarer så fort vi kan.
+    <div className="max-w-4xl mx-auto px-4 py-16">
+      <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
+        Kontakt
+      </span>
+      <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">Si hei!</h1>
+      <p className="text-[#F5F5F5]/85 text-lg leading-relaxed max-w-2xl">
+        Vil du booke et show, bli med på neste produksjon eller låne utstyr? Send oss en
+        DM på Instagram eller en e-post, så svarer vi så fort vi kan.
       </p>
 
-      {status === 'sendt' ? (
-        <div className="bg-[#5E0A1D] border border-[#F0A500]/40 rounded-lg p-8 text-center">
-          <p className="text-[#F0A500] text-xl font-semibold">
-            Meldingen er sendt!
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-10 mt-12 items-start">
+        <section>
+          <h2 className="text-2xl font-bold text-[#F5F5F5] mb-6">Hva kan vi hjelpe med?</h2>
+          <ul className="space-y-4">
+            {grunner.map(({ tittel, tekst, emne }) => (
+              <li key={tittel}>
+                <a
+                  href={epostLenke(emne)}
+                  className="group block bg-[#5E0A1D] border border-[#C8102E]/30 hover:border-[#C8102E]/70 rounded-lg p-5 transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-[#F5F5F5] group-hover:text-[#F7C948] transition-colors">
+                    {tittel} →
+                  </h3>
+                  <p className="text-[#A89A90] text-sm mt-1">{tekst}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <aside className="bg-[#5E0A1D] border border-[#F0A500]/40 rounded-lg p-6">
+          <h2 className="text-xl font-bold text-[#F5F5F5]">Slå av en prat</h2>
+          <p className="text-[#A89A90] text-sm mt-2">
+            Send oss en DM på Instagram eller en e-post, det som passer deg best.
           </p>
-          <p className="text-[#A89A90] mt-2">Vi tar kontakt så snart vi kan.</p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label
-              htmlFor="navn"
-              className="block text-sm font-medium text-[#F5F5F5] mb-2"
-            >
-              Navn
-            </label>
-            <input
-              id="navn"
-              name="navn"
-              type="text"
-              required
-              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="epost"
-              className="block text-sm font-medium text-[#F5F5F5] mb-2"
-            >
-              E-post
-            </label>
-            <input
-              id="epost"
-              name="epost"
-              type="email"
-              required
-              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="melding"
-              className="block text-sm font-medium text-[#F5F5F5] mb-2"
-            >
-              Melding
-            </label>
-            <textarea
-              id="melding"
-              name="melding"
-              rows={5}
-              required
-              className="w-full bg-[#5E0A1D] border border-[#C8102E]/30 focus:border-[#F0A500] rounded-lg px-4 py-3 text-[#F5F5F5] outline-none transition-colors resize-none"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={status === 'sender'}
-            className="w-full bg-[#C8102E] hover:bg-[#9B0C23] disabled:opacity-60 text-white font-semibold py-3 rounded-lg transition-colors"
+          <a
+            href={INSTAGRAM_DM}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 block w-full text-center bg-[#C8102E] hover:bg-[#9B0C23] text-white font-semibold py-3 rounded-lg transition-colors"
           >
-            {status === 'sender' ? 'Sender...' : 'Send melding'}
-          </button>
+            Send oss en DM
+          </a>
+          <a
+            href={epostLenke()}
+            className="mt-3 block w-full text-center border border-[#F0A500] text-[#F0A500] hover:bg-[#F0A500]/10 font-semibold py-3 rounded-lg transition-colors"
+          >
+            Send e-post
+          </a>
 
-          {status === 'feil' && (
-            <p className="text-[#C8102E] text-sm text-center">
-              Noe gikk galt. Prøv igjen, eller send en e-post direkte.
-            </p>
-          )}
-
-          {FORMSPREE_ID === 'REPLACE_ME' && (
-            <p className="text-[#A89A90] text-xs text-center">
-              ⚠️ Bytt ut <code className="text-[#F0A500]">FORMSPREE_ID</code> i{' '}
-              <code className="text-[#F0A500]">src/pages/Kontakt.tsx</code> med
-              din Formspree-ID for å aktivere skjemaet.
-            </p>
-          )}
-        </form>
-      )}
+          <h2 className="text-lg font-bold text-[#F5F5F5] mt-8 mb-3">Følg oss</h2>
+          <ul className="space-y-2">
+            {sosiale.map(({ navn, handle, url }) => (
+              <li key={url}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-baseline justify-between gap-3 text-sm group"
+                >
+                  <span className="text-[#A89A90]">{navn}</span>
+                  <span className="text-[#F0A500] group-hover:text-[#F7C948] font-semibold">
+                    {handle}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
     </div>
   )
 }
