@@ -18,5 +18,22 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      // Bilder fra public/ skal vises med <Bilde>, som gir WebP i riktig størrelse.
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'JSXOpeningElement[name.name="img"]',
+          message:
+            'Bruk <Bilde> fra src/components/Bilde.tsx i stedet for <img>, så bildet blir optimalisert.',
+        },
+      ],
+    },
+  },
+  {
+    // Bilde.tsx er selve komponenten. YouTube-miniatyrer kommer fra YouTube og
+    // kan ikke optimaliseres av skriptet vårt.
+    files: ['src/components/Bilde.tsx', 'src/components/YouTubeGrid.tsx'],
+    rules: { 'no-restricted-syntax': 'off' },
   },
 ])
