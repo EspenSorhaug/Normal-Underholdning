@@ -86,19 +86,19 @@ export const prosjekter: Prosjekt[] = [
     ],
   },
   {
-    id: 'faux-fatter-2024',
-    tittel: 'Faux Fatter',
+    id: 'fauxfatter-2024',
+    tittel: 'Fauxfatter',
     type: 'revy',
     undertittel: 'Sommershow',
     tidspunkt: 'Juni 2024',
     sted: 'SALT',
     beskrivelse: [
-      'Alle gode ting er tre! Med Faux Fatter ble Faux-trilogien komplett. Showet ble spilt på SALT 10. og 11. juni 2024.',
+      'Alle gode ting er tre! Med Fauxfatter ble Faux-trilogien komplett. Showet ble spilt på SALT 10. og 11. juni 2024.',
       'Temaet var historiefortelling. Det er ikke bare oldtidens mest populære sosiale medium ved siden av hulemaling, men noe vi alle driver med hver dag. Alle er forfatter i sitt eget liv.',
     ],
     plakat: {
       fil: '/revy/C7Bn2MmiSEL.jpg',
-      alt: 'Plakat for Faux Fatter: en hånd skriver med fjærpenn i en bok mens tegninger strømmer ut av sidene, på turkis bakgrunn',
+      alt: 'Plakat for Fauxfatter: en hånd skriver med fjærpenn i en bok mens tegninger strømmer ut av sidene, på turkis bakgrunn',
       innlegg: ig('C7Bn2MmiSEL'),
     },
     bilder: [
@@ -129,7 +129,7 @@ export const prosjekter: Prosjekt[] = [
       },
       {
         fil: '/revy/C8FIO2CisoJ-2.jpg',
-        alt: 'To fisker fra en pappbåt som heter «Doningen II», ved siden av Faux Fatter-skiltet',
+        alt: 'To fisker fra en pappbåt som heter «Doningen II», ved siden av Fauxfatter-skiltet',
         innlegg: ig('C8FIO2CisoJ', 2),
       },
       {
