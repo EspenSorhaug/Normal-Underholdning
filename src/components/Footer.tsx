@@ -15,7 +15,7 @@ export default function Footer() {
               Normal Underholdning
             </p>
             <p className="text-[#A89A90] text-sm mt-1">
-              Impro · Revy · Musikal · AV-utleie
+              Impro · Revy · Musikal · Kameraleie
             </p>
           </div>
         </div>

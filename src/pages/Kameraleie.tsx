@@ -4,17 +4,17 @@ export default function Kameraleie() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
       <span className="text-xs font-semibold uppercase tracking-widest text-[#F0A500]">
-        AV-utstyr
+        Utleie
       </span>
       <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">Kameraleie</h1>
       <p className="text-[#A89A90] text-lg mb-12">
-        Profesjonelt lyd- og lysutstyr til ditt arrangement.
+        Kamerautstyr til ditt prosjekt eller arrangement.
       </p>
 
       <section className="space-y-6 text-[#F5F5F5]/85 text-lg leading-relaxed">
         <p>
-          Vi leier ut AV-utstyr til arrangementer av alle størrelser — fra
-          bursdager og firmafester til konserter og forestillinger.
+          Vi leier ut kamerautstyr til alt fra filmprosjekter og innspillinger
+          til forestillinger og arrangementer.
         </p>
         <p>
           Ta kontakt for å sjekke tilgjengelighet og få et tilbud tilpasset ditt
