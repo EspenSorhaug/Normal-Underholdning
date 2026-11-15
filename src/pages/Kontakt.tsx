@@ -38,7 +38,7 @@ export default function Kontakt() {
       </span>
       <h1 className="text-4xl font-bold text-[#F5F5F5] mt-2 mb-4">Si hei!</h1>
       <p className="text-[#F5F5F5]/85 text-lg leading-relaxed max-w-2xl">
-        Vil du booke et show, bli med på neste produksjon eller låne utstyr? Send oss en
+        Vil du booke et show, bli med på neste produksjon eller leie utstyr? Send oss en
         DM på Instagram eller en e-post, så svarer vi så fort vi kan.
       </p>
 
