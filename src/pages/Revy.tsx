@@ -1,6 +1,7 @@
 import MerPaaVei from '../components/MerPaaVei'
 import ProsjektKort from '../components/ProsjektKort'
 import { prosjekter } from '../data/prosjekter'
+import Bilde from '../components/Bilde'
 
 const toppbilde = {
   fil: '/revy/Cf6p4sWI4P5.jpg',
@@ -34,9 +35,11 @@ export default function Revy() {
           rel="noopener noreferrer"
           className="block aspect-[4/3] md:aspect-square w-full overflow-hidden rounded-2xl border border-[#C8102E]/30 hover:border-[#C8102E]/70 shadow-2xl shadow-[#C8102E]/20 transition-colors"
         >
-          <img
+          <Bilde
             src={toppbilde.fil}
             alt={toppbilde.alt}
+            sizes="(min-width: 768px) 340px, 100vw"
+            prioritet
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
         </a>

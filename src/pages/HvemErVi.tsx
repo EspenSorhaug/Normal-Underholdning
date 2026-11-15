@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Bilde from '../components/Bilde'
 
 const ig = (id: string) => `https://www.instagram.com/p/${id}/`
 
@@ -117,9 +118,11 @@ export default function HvemErVi() {
           </p>
         </div>
 
-        <img
+        <Bilde
           src={toppbilde.fil}
           alt={toppbilde.alt}
+          sizes="(min-width: 768px) 500px, 100vw"
+          prioritet
           className="block aspect-[6/5] w-full object-cover rounded-2xl border border-[#C8102E]/30 shadow-2xl shadow-[#C8102E]/20"
         />
       </section>
@@ -148,10 +151,10 @@ export default function HvemErVi() {
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
           {historieBilder.map(({ fil, alt, innlegg, tekst }) => {
             const bilde = (
-              <img
+              <Bilde
                 src={fil}
                 alt={alt}
-                loading="lazy"
+                sizes="(min-width: 640px) 290px, 100vw"
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             )
@@ -202,10 +205,10 @@ export default function HvemErVi() {
           rel="noopener noreferrer"
           className="block aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors"
         >
-          <img
+          <Bilde
             src="/hvem-er-vi/DGsciIliITC.jpg"
             alt="En stor gjeng samlet i en stue til kickoff for årets sommershow"
-            loading="lazy"
+            sizes="(min-width: 768px) 340px, 100vw"
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
         </a>
@@ -221,10 +224,10 @@ export default function HvemErVi() {
                 className="group block h-full overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 bg-[#5E0A1D] transition-colors"
               >
                 <div className="aspect-[4/3] sm:aspect-square overflow-hidden">
-                  <img
+                  <Bilde
                     src={fil}
                     alt={alt}
-                    loading="lazy"
+                    sizes="(min-width: 768px) 210px, (min-width: 640px) 50vw, 100vw"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

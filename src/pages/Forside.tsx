@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { arrangementer } from '../data/arrangementer'
 import ArrangementKort from '../components/ArrangementKort'
 import YouTubeGrid from '../components/YouTubeGrid'
+import Bilde from '../components/Bilde'
 
 // Legg til bilde (fil og alt) når det finnes. Uten bilde vises ikonet i stedet.
 const tilbud: {
@@ -63,9 +64,11 @@ export default function Forside() {
       {/* Hero */}
       <section className="relative bg-gradient-to-b from-[#5E0A1D] to-[#3A0612] border-b border-[#C8102E]/30 py-20 px-4 text-center overflow-hidden">
         <div className="max-w-3xl mx-auto relative">
-          <img
+          <Bilde
             src="/logo.jpg"
             alt="Normal Underholdning logo"
+            sizes="(min-width: 640px) 224px, 160px"
+            prioritet
             className="mx-auto w-40 h-40 sm:w-56 sm:h-56 rounded-2xl shadow-2xl shadow-[#C8102E]/30 mb-8 object-cover"
           />
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5F5F5] tracking-tight">
@@ -132,10 +135,10 @@ export default function Forside() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   {bilde ? (
-                    <img
+                    <Bilde
                       src={bilde.fil}
                       alt={bilde.alt}
-                      loading="lazy"
+                      sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (

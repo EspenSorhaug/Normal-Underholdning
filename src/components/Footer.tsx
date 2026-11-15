@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
+import Bilde from './Bilde'
 
 export default function Footer() {
   return (
     <footer className="border-t border-[#C8102E]/40 bg-[#5E0A1D] mt-16">
       <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-8 justify-between">
         <div className="flex items-center gap-3">
-          <img
+          <Bilde
             src="/logo.jpg"
             alt="Normal Underholdning logo"
+            sizes="48px"
             className="w-12 h-12 rounded object-cover"
           />
           <div>

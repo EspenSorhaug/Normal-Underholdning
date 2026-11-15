@@ -1,4 +1,5 @@
 import type { Prosjekt } from '../data/prosjekter'
+import Bilde from './Bilde'
 
 interface Props {
   prosjekt: Prosjekt
@@ -60,10 +61,10 @@ export default function ProsjektKort({ prosjekt }: Props) {
             rel="noopener noreferrer"
             className="block w-full max-w-sm mx-auto md:max-w-none overflow-hidden rounded-xl border border-[#C8102E]/30 hover:border-[#C8102E]/70 shadow-2xl shadow-[#C8102E]/20 transition-colors"
           >
-            <img
+            <Bilde
               src={plakat.fil}
               alt={plakat.alt}
-              loading="lazy"
+              sizes="(min-width: 768px) 340px, (min-width: 448px) 384px, 100vw"
               className="w-full h-auto hover:scale-105 transition-transform duration-300"
             />
           </a>
@@ -85,10 +86,10 @@ export default function ProsjektKort({ prosjekt }: Props) {
                     rel="noopener noreferrer"
                     className={`relative block ${lenkeKlasse(i)} overflow-hidden rounded-lg border border-[#C8102E]/30 hover:border-[#C8102E]/70 transition-colors`}
                   >
-                    <img
+                    <Bilde
                       src={fil}
                       alt={alt}
-                      loading="lazy"
+                      sizes={`${bredSm(i) ? '(min-width: 640px) 580px' : '(min-width: 640px) 290px'}, ${bredMobil(i) ? '100vw' : '50vw'}`}
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </a>
