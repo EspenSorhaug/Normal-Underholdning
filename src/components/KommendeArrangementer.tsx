@@ -23,7 +23,7 @@ export default function KommendeArrangementer({
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className={`grid grid-cols-1 gap-6 ${kommende.length > 1 ? 'md:grid-cols-2' : ''}`}>
       {kommende.map((a) => (
         <ArrangementKort key={a.id} arrangement={a} />
       ))}

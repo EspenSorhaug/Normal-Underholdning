@@ -111,9 +111,9 @@ export default function Forside() {
               <p className="text-[#A89A90] mt-2">Kom og se oss live!</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className={`grid grid-cols-1 gap-6 ${kommende.length > 1 ? 'md:grid-cols-2' : ''}`}>
             {kommende.slice(0, 2).map((a) => (
-              <ArrangementKort key={a.id} arrangement={a} />
+              <ArrangementKort key={a.id} arrangement={a} lenkTilKategori />
             ))}
           </div>
         </section>

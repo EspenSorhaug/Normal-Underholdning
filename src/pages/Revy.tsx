@@ -1,13 +1,10 @@
 import MerPaaVei from '../components/MerPaaVei'
 import ProsjektKort from '../components/ProsjektKort'
 import { prosjekter } from '../data/prosjekter'
+import { toppbilder } from '../data/toppbilder'
 import Bilde from '../components/Bilde'
 
-const toppbilde = {
-  fil: '/revy/Cf6p4sWI4P5.jpg',
-  innlegg: 'https://www.instagram.com/p/Cf6p4sWI4P5/',
-  alt: 'Fra Faux Show: tre på scenen foran pappkulisser av en by, én holder en banan i været',
-}
+const toppbilde = toppbilder.revy!
 
 const revyer = prosjekter.filter((p) => p.type === 'revy')
 

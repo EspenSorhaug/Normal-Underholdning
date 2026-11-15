@@ -1,13 +1,10 @@
 import MerPaaVei from '../components/MerPaaVei'
 import ProsjektKort from '../components/ProsjektKort'
 import { prosjekter } from '../data/prosjekter'
+import { toppbilder } from '../data/toppbilder'
 import Bilde from '../components/Bilde'
 
-const toppbilde = {
-  fil: '/musikal/DKho7e3Cr2Y-1.jpg',
-  innlegg: 'https://www.instagram.com/p/DKho7e3Cr2Y/',
-  alt: 'Fra premieren på The Peak: skuespillerne på scenen i lilla lys under teksten «Så bli med til hotell the peak»',
-}
+const toppbilde = toppbilder.musikal!
 
 const musikaler = prosjekter.filter((p) => p.type === 'musikal')
 

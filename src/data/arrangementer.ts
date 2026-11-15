@@ -9,6 +9,8 @@ export interface Arrangement {
   beskrivelse: string
   billetlenke?: string
   facebookEvent?: string
+  /** Eget bilde til kortet. Uten dette brukes toppbildet fra kategorisiden. */
+  bilde?: { fil: string; alt: string }
 }
 
 export const arrangementer: Arrangement[] = [
