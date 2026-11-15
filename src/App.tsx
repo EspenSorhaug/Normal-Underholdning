@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import TilToppen from './components/TilToppen'
 import Footer from './components/Footer'
 import Forside from './pages/Forside'
 import HvemErVi from './pages/HvemErVi'
@@ -13,6 +14,7 @@ import Kontakt from './pages/Kontakt'
 export default function App() {
   return (
     <BrowserRouter>
+      <TilToppen />
       <Header />
       <main className="flex-1">
         <Routes>

@@ -3,24 +3,43 @@ import { arrangementer } from '../data/arrangementer'
 import ArrangementKort from '../components/ArrangementKort'
 import YouTubeGrid from '../components/YouTubeGrid'
 
-const tilbud = [
+// Legg til bilde (fil og alt) når det finnes. Uten bilde vises ikonet i stedet.
+const tilbud: {
+  til: string
+  tittel: string
+  ikon: string
+  tekst: string
+  bilde?: { fil: string; alt: string }
+}[] = [
   {
     til: '/impro',
     tittel: 'Impro',
     ikon: '🎭',
     tekst: 'Improvisasjonsteater der ingen vet hva som skjer — ikke engang oss.',
+    bilde: {
+      fil: '/hvem-er-vi/DTJErQADMo7.jpg',
+      alt: 'Improgjengen poserer dramatisk på et teppe foran et mørkeblått sceneteppe',
+    },
   },
   {
     til: '/revy',
     tittel: 'Revy',
     ikon: '🎤',
     tekst: 'Satirisk underholdning med musikk, sketsjer og mye latter.',
+    bilde: {
+      fil: '/revy/Cf6p4sWI4P5.jpg',
+      alt: 'Fra Faux Show: tre på scenen foran pappkulisser av en by, én holder en banan i været',
+    },
   },
   {
     til: '/musikal',
     tittel: 'Musikal',
     ikon: '🎵',
     tekst: 'Musikal med hjerte, humor og store følelser.',
+    bilde: {
+      fil: '/musikal/DKho7e3Cr2Y-1.jpg',
+      alt: 'Fra premieren på The Peak: skuespillerne på scenen i lilla lys',
+    },
   },
   {
     til: '/kameraleie',
@@ -101,17 +120,34 @@ export default function Forside() {
             Fire måter å oppleve Normal Underholdning.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tilbud.map(({ til, tittel, ikon, tekst }) => (
+            {tilbud.map(({ til, tittel, ikon, tekst, bilde }) => (
               <Link
                 key={til}
                 to={til}
-                className="bg-[#5E0A1D] border border-[#C8102E]/30 hover:border-[#C8102E]/70 rounded-lg p-6 transition-colors group"
+                className="bg-[#5E0A1D] border border-[#C8102E]/30 hover:border-[#C8102E]/70 rounded-lg overflow-hidden transition-colors group"
               >
-                <span className="text-4xl block">{ikon}</span>
-                <h3 className="text-lg font-bold text-[#F0A500] mt-3 mb-2 group-hover:text-[#F7C948] transition-colors">
-                  {tittel}
-                </h3>
-                <p className="text-[#A89A90] text-sm leading-relaxed">{tekst}</p>
+                <div className="aspect-[4/3] overflow-hidden">
+                  {bilde ? (
+                    <img
+                      src={bilde.fil}
+                      alt={bilde.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#3A0612] to-[#5E0A1D]">
+                      <span className="text-6xl" aria-hidden="true">
+                        {ikon}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-[#F0A500] mb-2 group-hover:text-[#F7C948] transition-colors">
+                    {tittel}
+                  </h3>
+                  <p className="text-[#A89A90] text-sm leading-relaxed">{tekst}</p>
+                </div>
               </Link>
             ))}
           </div>
